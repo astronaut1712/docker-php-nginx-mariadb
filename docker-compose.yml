@@ -1,0 +1,22 @@
+db:
+  image: mariadb
+  environment:
+    - MYSQL_ROOT_PASSWORD=P@ssW0rd2016
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./mariadb/data:/var/lib/mysql
+    - ./mariadb/conf:/etc/mysql/conf.d
+
+web:
+  image: astronaut1712/nginx-php:5
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - db:db
+  volumes:
+    - ./nginx/etc/ssl:/etc/nginx/ssl
+    - ./nginx/vhost:/etc/nginx/sites-enabled
+    - ./nginx/src:/var/www
+    - ./nginx/logs:/var/log/nginx
