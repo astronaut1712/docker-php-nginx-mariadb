@@ -1,5 +1,7 @@
 # docker nginx with php5-fpm
 
+[![](https://images.microbadger.com/badges/image/astronaut1712/nginx-php.svg)](https://microbadger.com/images/astronaut1712/nginx-php "Get your own image badge on microbadger.com")
+
 ## How to use
 
 ```
